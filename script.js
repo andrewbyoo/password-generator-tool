@@ -5,7 +5,23 @@ var lttrUppr = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M",
 var spclChar = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "-", "+", "=", "[", "{", "]", "}", ";", ":", "'", '"', "<", ",", ">", ".", "`", "~"]
 var numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
 
+// ---------
+// TEST CODE
+// ---------
+var all = lttrLwr.concat(lttrUppr, spclChar, numbers)
+console.log(all)
+// ----------------
+// END OF TEST CODE
+// ----------------
+
+
+
+
 // Write password to the #password input
+function generatePassword() {
+  return
+}
+
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
