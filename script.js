@@ -5,6 +5,43 @@ var lttrUppr = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M",
 // Could not add "\" backslash into the array, ask in office hours
 var spclChar = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "-", "+", "=", "[", "{", "]", "}", "|", ";", ":", "'", '"', "<", ",", ">", ".", "`", "~", "/", "?"]
 var numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
+var outputPass = ""
+
+// Function to start prompting user on generating a new password
+function generatePassword() {
+
+  // Prompt to set password length
+  var passLength = prompt("Please input the desired length. Input from 8 to 128 is required.");
+
+  // Test for if input is between 8 to 128
+  if (passLength <= 8 || passLength >= 128) {
+
+    // Ends input if length is outside the specified range
+    window.alert("Input is required to be anywhere from 8 to 128. Please restart.")
+    return
+  }
+  // Character type prompts
+  else {
+    var lttrLwrOption = confirm("Should lower case letters be included in the password?")
+    var lttrUpprOption = confirm("Should upper case letters be included in the password?")
+    var spclCharOption = confirm("Should special characters be included in the password?")
+    var numbersOption = confirm("Should numbers be included in the password?")
+
+    // If all statements were accepted
+    if (lttrLwrOption && lttrUpprOption && spclCharOption && numbersOption) {
+      setOptions = lttrLwr.concat(lttrUppr, spclChar, numbers)
+
+      // Call finalGeneration function
+      finalGeneration();
+      return
+    }
+  }
+}
+
+// To be written
+function finalGeneration() {
+
+}
 
 // // ---------
 // // TEST CODE
@@ -34,11 +71,11 @@ var numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
 
 // Code needed to get password onto html page
 // var password is the final password text after the randomization has completed
-var password = "abc123Test"
+// var password = "abc123Test"
 
 // // Write password to the #password input
 function writePassword() {
-  // var password = generatePassword();
+  var password = generatePassword();
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
 }
