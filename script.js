@@ -8,8 +8,10 @@ var numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
 var outputPass = ""
 
 // Option outputs
-// All options
 var allOptions = lttrLwr.concat(lttrUppr, spclChar, numbers)
+var options1 = lttrLwr.concat(lttrUppr, spclChar)
+var options2 = lttrLwr.concat(lttrUppr, numbers)
+var options3 = lttrLwr.concat(spclChar, numbers)
 
 // Function to start prompting user on generating a new password
 function generatePassword() {
@@ -41,7 +43,27 @@ function generatePassword() {
   if (lttrLwrOption && lttrUpprOption && spclCharOption && numbersOption) {
     for (var i = 0; i < passLength; i++) {
       outputPass += allOptions[Math.floor(Math.random() * allOptions.length)];
-      console.log(outputPass)
+    } return outputPass
+  } else
+
+  // Output for when lowercase, uppercase, and special characters were chosen
+  if (lttrLwrOption && lttrUpprOption && spclCharOption && !numbersOption) {
+    for (var i = 0; i < passLength; i++) {
+      outputPass += options1[Math.floor(Math.random() * options1.length)];
+    } return outputPass
+  } else
+
+  // Output for when lowercase, uppercase, and numbers were chosen
+  if (lttrLwrOption && lttrUpprOption && !spclCharOption && numbersOption) {
+    for (var i = 0; i < passLength; i++) {
+      outputPass += options2[Math.floor(Math.random() * options2.length)];
+    } return outputPass
+  }
+
+  // Output for when lowercase, special characters, and numbers were chosen
+  if (lttrLwrOption && !lttrUpprOption && spclCharOption && numbersOption) {
+    for (var i = 0; i < passLength; i++) {
+      outputPass += options3[Math.floor(Math.random() * options3.length)];
     } return outputPass
   }
 }
