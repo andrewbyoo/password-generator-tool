@@ -20,26 +20,20 @@ function generatePassword() {
     window.alert("Input is required to be anywhere from 8 to 128. Please restart.")
     return
   }
+
   // Character type prompts
-  else {
-    var lttrLwrOption = confirm("Should lower case letters be included in the password?")
-    var lttrUpprOption = confirm("Should upper case letters be included in the password?")
-    var spclCharOption = confirm("Should special characters be included in the password?")
-    var numbersOption = confirm("Should numbers be included in the password?")
+  var lttrLwrOption = confirm("Should lower case letters be included in the password?")
+  var lttrUpprOption = confirm("Should upper case letters be included in the password?")
+  var spclCharOption = confirm("Should special characters be included in the password?")
+  var numbersOption = confirm("Should numbers be included in the password?")
 
-    // If all statements were accepted
-    if (lttrLwrOption && lttrUpprOption && spclCharOption && numbersOption) {
-      setOptions = lttrLwr.concat(lttrUppr, spclChar, numbers)
-
-      // Call finalGeneration function
-      finalGeneration();
-      return
-    }
+  // Ends input if no character options were chosen
+  if (!lttrLwrOption && !lttrUpprOption && !spclCharOption && !numbersOption) {
+    window.alert("At least one of the character options must be chosen. Please restart.")
+    return
   }
-}
 
-// To be written
-function finalGeneration() {
+
 
 }
 
