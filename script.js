@@ -15,7 +15,7 @@ var allOptions = lttrLwr.concat(lttrUppr, spclChar, numbers)
 function generatePassword() {
 
   // Prompt to set password length
-  var passLength = prompt("Please input the desired length. Input from 8 to 128 is required.");
+  var passLength = parseInt(prompt("Please input the desired length. Input from 8 to 128 is required."));
 
   // Test for if input is between 8 to 128
   if (passLength < 8 || passLength > 128) {
@@ -39,13 +39,12 @@ function generatePassword() {
 
   // Output for when all options were chosen
   if (lttrLwrOption && lttrUpprOption && spclCharOption && numbersOption) {
-    for (let i = 0; i < passLength.length; i++) {
+    for (var i = 0; i < passLength; i++) {
       outputPass += allOptions[Math.floor(Math.random() * allOptions.length)];
       console.log(outputPass)
     } return outputPass
   }
 }
-generatePassword()
 // // ---------
 // // TEST CODE
 // // ---------
