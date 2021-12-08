@@ -7,6 +7,10 @@ var spclChar = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "-", "+",
 var numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
 var outputPass = ""
 
+// Option outputs
+// All options
+var allOptions = lttrLwr.concat(lttrUppr, spclChar, numbers)
+
 // Function to start prompting user on generating a new password
 function generatePassword() {
 
@@ -14,7 +18,7 @@ function generatePassword() {
   var passLength = prompt("Please input the desired length. Input from 8 to 128 is required.");
 
   // Test for if input is between 8 to 128
-  if (passLength <= 8 || passLength >= 128) {
+  if (passLength < 8 || passLength > 128) {
 
     // Ends input if length is outside the specified range
     window.alert("Input is required to be anywhere from 8 to 128. Please restart.")
@@ -33,10 +37,15 @@ function generatePassword() {
     return
   }
 
-
-
+  // Output for when all options were chosen
+  if (lttrLwrOption && lttrUpprOption && spclCharOption && numbersOption) {
+    for (let i = 0; i < passLength.length; i++) {
+      outputPass += allOptions[Math.floor(Math.random() * allOptions.length)];
+      console.log(outputPass)
+    } return outputPass
+  }
 }
-
+generatePassword()
 // // ---------
 // // TEST CODE
 // // ---------
@@ -67,7 +76,7 @@ function generatePassword() {
 // var password is the final password text after the randomization has completed
 // var password = "abc123Test"
 
-// // Write password to the #password input
+// Write password to the #password input
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
