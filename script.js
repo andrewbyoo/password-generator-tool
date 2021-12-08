@@ -3,10 +3,10 @@ var generateBtn = document.querySelector("#generate");
 var lttrLwr = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 var lttrUppr = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
 // Could not add "\" backslash into the array, ask in office hours
-var spclChar = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "-", "+", "=", "[", "{", "]", "}", "|", ";", ":", "'", '"', "<", ",", ">", ".", "`", "~", "/", "?"]
+var spclChar = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "-", "+", "=", "[", "{", "]", "}", "|", "\\",";", ":", "'", '"', "<", ",", ">", ".", "`", "~", "/", "?"]
 var numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
 var outputPass = ""
-
+console.log(spclChar);
 // Option outputs
 var allOptions = lttrLwr.concat(lttrUppr, spclChar, numbers)
 var options1 = lttrLwr.concat(lttrUppr, spclChar)
@@ -16,6 +16,9 @@ var options3 = lttrLwr.concat(spclChar, numbers)
 // Function to start prompting user on generating a new password
 function generatePassword() {
 
+  // Reset outputPass if code is run without refreshing page
+  var outputPass = ""
+
   // Prompt to set password length
   var passLength = parseInt(prompt("Please input the desired length. Input from 8 to 128 is required."));
 
@@ -24,7 +27,7 @@ function generatePassword() {
 
     // Ends input if length is outside the specified range
     window.alert("Input is required to be anywhere from 8 to 128. Please restart.")
-    return
+    return generatePassword()
   }
 
   // Character type prompts
@@ -36,7 +39,7 @@ function generatePassword() {
   // Ends input if no character options were chosen
   if (!lttrLwrOption && !lttrUpprOption && !spclCharOption && !numbersOption) {
     window.alert("At least one of the character options must be chosen. Please restart.")
-    return
+    return generatePassword ()
   }
 
   // Output for when all options were chosen
