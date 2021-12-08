@@ -14,6 +14,9 @@ var options2 = lttrLwr.concat(lttrUppr, numbers)
 var options3 = lttrLwr.concat(spclChar, numbers)
 var options4 = lttrLwr.concat(lttrUppr)
 var options5 = lttrLwr.concat(spclChar)
+var options6 = lttrUppr.concat(spclChar, numbers)
+var options7 = lttrUppr.concat(spclChar)
+var options8 = lttrUppr.concat(numbers)
 
 // Function to start prompting user on generating a new password
 function generatePassword() {
@@ -99,6 +102,34 @@ function generatePassword() {
       outputPass += lttrLwr[Math.floor(Math.random() * lttrLwr.length)];
     } return outputPass
   }
+
+  // Output for when uppercase, special characters, and numbers were chosen
+  if (!lttrLwrOption && lttrUpprOption && spclCharOption && numbersOption) {
+    for (var i = 0; i < passLength; i++) {
+      outputPass += options6[Math.floor(Math.random() * options6.length)];
+    } return outputPass
+  } else
+
+  // Output for when uppercase and special characters were chosen
+  if (!lttrLwrOption && lttrUpprOption && spclCharOption && !numbersOption) {
+    for (var i = 0; i < passLength; i++) {
+      outputPass += options7[Math.floor(Math.random() * options7.length)];
+    } return outputPass
+  } else
+
+  // Output for when uppercase and numbers were chosen
+  if (!lttrLwrOption && lttrUpprOption && !spclCharOption && numbersOption) {
+    for (var i = 0; i < passLength; i++) {
+      outputPass += options8[Math.floor(Math.random() * options8.length)];
+    } return outputPass
+  } else
+
+  // Output for when only uppercase was chosen
+  if (!lttrLwrOption && lttrUpprOption && !spclCharOption && !numbersOption) {
+    for (var i = 0; i < passLength; i++) {
+      outputPass += lttrUppr[Math.floor(Math.random() * lttrUppr.length)];
+    } return outputPass
+  } else
 }
 // // ---------
 // // TEST CODE
