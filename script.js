@@ -2,11 +2,10 @@
 var generateBtn = document.querySelector("#generate");
 var lttrLwr = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 var lttrUppr = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
-// Could not add "\" backslash into the array, ask in office hours
 var spclChar = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "-", "+", "=", "[", "{", "]", "}", "|", "\\",";", ":", "'", '"', "<", ",", ">", ".", "`", "~", "/", "?"]
 var numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
 var outputPass = ""
-console.log(spclChar);
+
 // Option outputs
 var allOptions = lttrLwr.concat(lttrUppr, spclChar, numbers)
 var options1 = lttrLwr.concat(lttrUppr, spclChar)
@@ -17,6 +16,7 @@ var options5 = lttrLwr.concat(spclChar)
 var options6 = lttrUppr.concat(spclChar, numbers)
 var options7 = lttrUppr.concat(spclChar)
 var options8 = lttrUppr.concat(numbers)
+var options9 = spclChar.concat(numbers)
 
 // Function to start prompting user on generating a new password
 function generatePassword() {
@@ -130,6 +130,27 @@ function generatePassword() {
       outputPass += lttrUppr[Math.floor(Math.random() * lttrUppr.length)];
     } return outputPass
   } else
+
+  // Output for when special characters and numbers were chosen
+  if (!lttrLwrOption && !lttrUpprOption && spclCharOption && numbersOption) {
+    for (var i = 0; i < passLength; i++) {
+      outputPass += options9[Math.floor(Math.random() * options9.length)];
+    } return outputPass
+  } else
+
+  // Output for when only special characters was chosen
+  if (!lttrLwrOption && !lttrUpprOption && spclCharOption && !numbersOption) {
+    for (var i = 0; i < passLength; i++) {
+      outputPass += spclChar[Math.floor(Math.random() * spclChar.length)];
+    } return outputPass
+  } else
+
+  // Output for when only numbers was chosen
+  if (!lttrLwrOption && !lttrUpprOption && !spclCharOption && numbersOption) {
+    for (var i = 0; i < passLength; i++) {
+      outputPass += numbers[Math.floor(Math.random() * numbers.length)];
+    } return outputPass
+  }
 }
 // // ---------
 // // TEST CODE
