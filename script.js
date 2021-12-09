@@ -19,188 +19,36 @@ var options7 = lttrUppr.concat(spclChar)
 var options8 = lttrUppr.concat(numbers)
 var options9 = spclChar.concat(numbers)
 
-// // Function to start prompting user on generating a new password
-// function generatePassword() {
-
-//   // Reset outputPass if code is run without refreshing page
-//   outputPass = ""
-
-//   // Prompt to set password length
-//   var passLength = parseInt(prompt("Please input the desired length. Input from 8 to 128 is required."));
-
-//   // Test for if input is between 8 to 128
-//   if (passLength < 8 || passLength > 128) {
-
-//     // Ends input if length is outside the specified range
-//     window.alert("Input is required to be anywhere from 8 to 128. Please restart.")
-//     return generatePassword()
-//   }
-
-//   // Character type prompts
-//   var lttrLwrOption = confirm("Should lower case letters be included in the password?")
-//   var lttrUpprOption = confirm("Should upper case letters be included in the password?")
-//   var spclCharOption = confirm("Should special characters be included in the password?")
-//   var numbersOption = confirm("Should numbers be included in the password?")
-
-//   // Ends input if no character options were chosen
-//   if (!lttrLwrOption && !lttrUpprOption && !spclCharOption && !numbersOption) {
-//     window.alert("At least one of the character options must be chosen. Please restart.")
-//     return generatePassword ()
-//   }
-
-//   // Output for when all options were chosen
-//   if (lttrLwrOption && lttrUpprOption && spclCharOption && numbersOption) {
-//     for (var i = 0; i < passLength; i++) {
-//       outputPass += allOptions[Math.floor(Math.random() * allOptions.length)];
-//     } return outputPass
-//   } else
-
-//   // Output for when lowercase, uppercase, and special characters were chosen
-//   if (lttrLwrOption && lttrUpprOption && spclCharOption && !numbersOption) {
-//     for (var i = 0; i < passLength; i++) {
-//       outputPass += options1[Math.floor(Math.random() * options1.length)];
-//     } return outputPass
-//   } else
-
-//   // Output for when lowercase, uppercase, and numbers were chosen
-//   if (lttrLwrOption && lttrUpprOption && !spclCharOption && numbersOption) {
-//     for (var i = 0; i < passLength; i++) {
-//       outputPass += options2[Math.floor(Math.random() * options2.length)];
-//     } return outputPass
-//   }
-
-//   // Output for when lowercase, special characters, and numbers were chosen
-//   if (lttrLwrOption && !lttrUpprOption && spclCharOption && numbersOption) {
-//     for (var i = 0; i < passLength; i++) {
-//       outputPass += options3[Math.floor(Math.random() * options3.length)];
-//     } return outputPass
-//   }
-
-//   // Output for when lowercase and uppercase were chosen
-//   if (lttrLwrOption && lttrUpprOption && !spclCharOption && !numbersOption) {
-//     for (var i = 0; i < passLength; i++) {
-//       outputPass += options4[Math.floor(Math.random() * options4.length)];
-//     } return outputPass
-//   }
-
-//   // Output for when lowercase and special characters were chosen
-//   if (lttrLwrOption && !lttrUpprOption && spclCharOption && !numbersOption) {
-//     for (var i = 0; i < passLength; i++) {
-//       outputPass += options4[Math.floor(Math.random() * options4.length)];
-//     } return outputPass
-//   }
-
-//   // Output for when lowercase and numbers were chosen
-//   if (lttrLwrOption && !lttrUpprOption && !spclCharOption && numbersOption) {
-//     for (var i = 0; i < passLength; i++) {
-//       outputPass += options5[Math.floor(Math.random() * options5.length)];
-//     } return outputPass
-//   }
-
-//   // Output for when only lowercase was chosen
-//   if (lttrLwrOption && !lttrUpprOption && !spclCharOption && !numbersOption) {
-//     for (var i = 0; i < passLength; i++) {
-//       outputPass += lttrLwr[Math.floor(Math.random() * lttrLwr.length)];
-//     } return outputPass
-//   }
-
-//   // Output for when uppercase, special characters, and numbers were chosen
-//   if (!lttrLwrOption && lttrUpprOption && spclCharOption && numbersOption) {
-//     for (var i = 0; i < passLength; i++) {
-//       outputPass += options6[Math.floor(Math.random() * options6.length)];
-//     } return outputPass
-//   } else
-
-//   // Output for when uppercase and special characters were chosen
-//   if (!lttrLwrOption && lttrUpprOption && spclCharOption && !numbersOption) {
-//     for (var i = 0; i < passLength; i++) {
-//       outputPass += options7[Math.floor(Math.random() * options7.length)];
-//     } return outputPass
-//   } else
-
-//   // Output for when uppercase and numbers were chosen
-//   if (!lttrLwrOption && lttrUpprOption && !spclCharOption && numbersOption) {
-//     for (var i = 0; i < passLength; i++) {
-//       outputPass += options8[Math.floor(Math.random() * options8.length)];
-//     } return outputPass
-//   } else
-
-//   // Output for when only uppercase was chosen
-//   if (!lttrLwrOption && lttrUpprOption && !spclCharOption && !numbersOption) {
-//     for (var i = 0; i < passLength; i++) {
-//       outputPass += lttrUppr[Math.floor(Math.random() * lttrUppr.length)];
-//     } return outputPass
-//   } else
-
-//   // Output for when special characters and numbers were chosen
-//   if (!lttrLwrOption && !lttrUpprOption && spclCharOption && numbersOption) {
-//     for (var i = 0; i < passLength; i++) {
-//       outputPass += options9[Math.floor(Math.random() * options9.length)];
-//     } return outputPass
-//   } else
-
-//   // Output for when only special characters was chosen
-//   if (!lttrLwrOption && !lttrUpprOption && spclCharOption && !numbersOption) {
-//     for (var i = 0; i < passLength; i++) {
-//       outputPass += spclChar[Math.floor(Math.random() * spclChar.length)];
-//     } return outputPass
-//   } else
-
-//   // Output for when only numbers was chosen
-//   if (!lttrLwrOption && !lttrUpprOption && !spclCharOption && numbersOption) {
-//     for (var i = 0; i < passLength; i++) {
-//       outputPass += numbers[Math.floor(Math.random() * numbers.length)];
-//     } return outputPass
-//   }
-// }
-
-
-
-
-// ---------
-// TEST CODE
-// ---------
-// Function to start prompting user on generating a new password
+// Function to start prompting user on password length and character options
 function generatePassword() {
-  // Reset outputPass if code is run without refreshing page
-  outputPass = "";
 
   // Prompt to set password length
-  var passLength = parseInt(
-    prompt("Please input the desired length. Input from 8 to 128 is required.")
-  );
+  var passLength = parseInt(prompt("Please input the desired length. Input from 8 to 128 is required."));
 
-  // Test for if input is between 8 to 128
+  // Test for if input is 8-128
   if (passLength < 8 || passLength > 128) {
-    // Ends input if length is outside the specified range
-    window.alert(
-      "Input is required to be anywhere from 8 to 128. Please restart."
-    );
+
+    // Ends input if length is outside the specified range and re-runs generatePassword function
+    window.alert("Input is required to be anywhere from 8 to 128. Please restart.");
     return generatePassword();
   }
 
   // Character type prompts
-  var lttrLwrOption = confirm(
-    "Should lower case letters be included in the password?"
-  );
-  var lttrUpprOption = confirm(
-    "Should upper case letters be included in the password?"
-  );
-  var spclCharOption = confirm(
-    "Should special characters be included in the password?"
-  );
+  var lttrLwrOption = confirm("Should lower case letters be included in the password?");
+  var lttrUpprOption = confirm("Should upper case letters be included in the password?");
+  var spclCharOption = confirm("Should special characters be included in the password?");
   var numbersOption = confirm("Should numbers be included in the password?");
 
-  // Ends input if no character options were chosen
+  // Ends input if no character options were chosen and re-runs generatePassword function
   if (!lttrLwrOption && !lttrUpprOption && !spclCharOption && !numbersOption) {
-    window.alert(
-      "At least one of the character options must be chosen. Please restart."
-    );
+    window.alert("At least one of the character options must be chosen. Please restart.");
     return generatePassword();
   }
 
+  // Function to generate password
   function generation() {
-    // Pass Reset
+
+    // Pass reset for when the function gets re-run without refreshing the page
     outputPass = ""
     outputPassArray = ""
 
@@ -325,32 +173,27 @@ function generatePassword() {
     }
   }
 
+  // Variables for converting the generated password into an array to check if all options that were selected were included in the password
   var passPreArray = generation()
   var passArray = passPreArray.split("")
 
-  // BEGINNING OF LOWER LETTER CHECK
+  // Returns true or false depending on if a lower letter was included in the password
   function lttrLwrCheck(passArray, lttrLwr) {
     return passArray.some(item => lttrLwr.includes(item))
   }
 
-  if (lttrLwrOption == false) {
-    lttrLwrCheck(passArray, lttrLwr)
+  // If the option for lowercase was selected, runs the lttrLwrCheck function
+  if (lttrLwrOption == true) {
+    var lttrLwrResult = lttrLwrCheck(passArray, lttrLwr)
+    return lttrLwrResult
+  }
+
+  // If the option for lowercase was selected but no lowercase letters were included in the generated password, re-runs the generation function
+  if (lttrLwrResult == false) {
     return generation()
   }
-  // END OF LOWER LETTER CHECK
-
   return outputPass
 }
-// -------------
-// END TEST CODE
-// -------------
-
-//
-// TEST CODE SET 2
-//
-
-
-
 
 // Write password to the #password input
 function writePassword() {
