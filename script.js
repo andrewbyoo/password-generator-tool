@@ -225,8 +225,23 @@ function generatePassword() {
       var spclCharResult = true
     }
 
+    // Returns true or false depending on if numbers were included in the password
+    function numbersCheck(passArray, numbers) {
+      return passArray.some(item => numbers.includes(item))
+    }
+
+    // If the option for numbers was selected, runs the numbersCheck function
+    if (numbersOption == true) {
+      var numbersResult = numbersCheck(passArray, numbers)
+    } else
+
+    // If the option for numbers was not selected, outputs true for characterCheckResult to pass
+    if (numbersOption == false) {
+      var numbersResult = true
+    }
+
     // If all results come back true, return true for final output
-    if (lttrLwrResult == true && lttrUpprResult == true && spclCharResult == true) {
+    if (lttrLwrResult == true && lttrUpprResult == true && spclCharResult == true && numbersResult == true) {
       return true
     }
 
