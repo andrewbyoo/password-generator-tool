@@ -180,7 +180,7 @@ function generatePassword() {
   // Function to check if characters in the generated password includes all selected options
   function characterCheck() {
 
-    // Returns true or false depending on if a lower letter was included in the password
+    // Returns true or false depending on if a lowercase letter was included in the password
     function lttrLwrCheck(passArray, lttrLwr) {
       return passArray.some(item => lttrLwr.includes(item))
     }
@@ -195,8 +195,29 @@ function generatePassword() {
       var lttrLwrResult = true
     }
 
-    if (lttrLwrResult == true) {
+    // Returns true or false depending on if an uppercase letter was included in the password
+    function lttrUpprCheck(passArray, lttrUppr) {
+      return passArray.some(item => lttrUppr.includes(item))
+    }
+
+    // If the option for lowercase was selected, runs the lttrUpprCheck function
+    if (lttrUpprOption == true) {
+      var lttrUpprResult = lttrUpprCheck(passArray, lttrUppr)
+    } else
+
+    // If the option for lowercase was not selected, outputs true for characterCheckResult to pass
+    if (lttrUpprOption == false) {
+      var lttrUpprResult = true
+    }
+
+    // If all results come back true, return true for final output
+    if (lttrLwrResult == true && lttrUpprResult == true) {
       return true
+    }
+
+    // If any of the options fail, re-run generation function
+    else {
+      return generation()
     }
   }
 
