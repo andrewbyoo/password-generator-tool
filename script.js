@@ -210,8 +210,23 @@ function generatePassword() {
       var lttrUpprResult = true
     }
 
+    // Returns true or false depending on if a special character was included in the password
+    function spclCharCheck(passArray, spclChar) {
+      return passArray.some(item => spclChar.includes(item))
+    }
+
+    // If the option for special characters was selected, runs the spclCharCheck function
+    if (spclCharOption == true) {
+      var spclCharResult = spclCharCheck(passArray, spclChar)
+    } else
+
+    // If the option for special characters was not selected, outputs true for characterCheckResult to pass
+    if (spclCharOption == false) {
+      var spclCharResult = true
+    }
+
     // If all results come back true, return true for final output
-    if (lttrLwrResult == true && lttrUpprResult == true) {
+    if (lttrLwrResult == true && lttrUpprResult == true && spclCharResult == true) {
       return true
     }
 
