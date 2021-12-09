@@ -328,12 +328,18 @@ function generatePassword() {
   var passPreArray = generation()
   var passArray = passPreArray.split("")
 
+  // BEGINNING OF LOWER LETTER CHECK
   function lttrLwrCheck(passArray, lttrLwr) {
     return passArray.some(item => lttrLwr.includes(item))
   }
 
-  var lttrLwrResult = lttrLwrCheck(passArray, lttrLwr)
-  return console.log(lttrLwrResult)
+  if (lttrLwrOption == false) {
+    lttrLwrCheck(passArray, lttrLwr)
+    return generation()
+  }
+  // END OF LOWER LETTER CHECK
+
+  return outputPass
 }
 // -------------
 // END TEST CODE
