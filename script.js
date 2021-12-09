@@ -200,12 +200,12 @@ function generatePassword() {
       return passArray.some(item => lttrUppr.includes(item))
     }
 
-    // If the option for lowercase was selected, runs the lttrUpprCheck function
+    // If the option for uppercase was selected, runs the lttrUpprCheck function
     if (lttrUpprOption == true) {
       var lttrUpprResult = lttrUpprCheck(passArray, lttrUppr)
     } else
 
-    // If the option for lowercase was not selected, outputs true for characterCheckResult to pass
+    // If the option for uppercase was not selected, outputs true for characterCheckResult to pass
     if (lttrUpprOption == false) {
       var lttrUpprResult = true
     }
