@@ -177,22 +177,34 @@ function generatePassword() {
   var passPreArray = generation()
   var passArray = passPreArray.split("")
 
-  // // Returns true or false depending on if a lower letter was included in the password
-  // function lttrLwrCheck(passArray, lttrLwr) {
-  //   return passArray.some(item => lttrLwr.includes(item))
-  // }
+  // Function to check if characters in the generated password includes all selected options
+  function characterCheck() {
 
-  // // If the option for lowercase was selected, runs the lttrLwrCheck function
-  // if (lttrLwrOption == true) {
-  //   var lttrLwrResult = lttrLwrCheck(passArray, lttrLwr)
-  //   return outputPass
-  // }
+    // Returns true or false depending on if a lower letter was included in the password
+    function lttrLwrCheck(passArray, lttrLwr) {
+      return passArray.some(item => lttrLwr.includes(item))
+    }
 
-  // // If the option for lowercase was selected but no lowercase letters were included in the generated password, re-runs the generation function
-  // if (lttrLwrResult == true) {
-  //   return console.log("Now it works")
-  // }
-  return
+    // If the option for lowercase was selected, runs the lttrLwrCheck function
+    if (lttrLwrOption == true) {
+      var lttrLwrResult = lttrLwrCheck(passArray, lttrLwr)
+    } else
+
+    // If the option for lowercase was not selected, outputs true for characterCheckResult to pass
+    if (lttrLwrOption == false) {
+      return true
+    }
+
+    // Validation result for lowercase option to password result
+    if (lttrLwrResult == true) {
+      return lttrLwrResult
+    }
+  }
+  var characterCheckResult = characterCheck()
+
+  if (characterCheckResult == true) {
+    return console.log("Working code log")
+  }
 }
 
 // Write password to the #password input
