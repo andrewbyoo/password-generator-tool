@@ -133,7 +133,7 @@ function generatePassword() {
     }
 
     // Output for when uppercase and special characters were chosen
-    else if (!lttrLwrOption && lttrUpprOption && spclCharOption && !numbersOption) {
+    if (!lttrLwrOption && lttrUpprOption && spclCharOption && !numbersOption) {
       for (var i = 0; i < passLength; i++) {
         outputPass += options7[Math.floor(Math.random() * options7.length)];
       }
@@ -141,7 +141,7 @@ function generatePassword() {
     }
 
     // Output for when uppercase and numbers were chosen
-    else if (!lttrLwrOption && lttrUpprOption && !spclCharOption && numbersOption) {
+    if (!lttrLwrOption && lttrUpprOption && !spclCharOption && numbersOption) {
       for (var i = 0; i < passLength; i++) {
         outputPass += options8[Math.floor(Math.random() * options8.length)];
       }
@@ -149,7 +149,7 @@ function generatePassword() {
     }
 
     // Output for when only uppercase was chosen
-    else if (!lttrLwrOption && lttrUpprOption && !spclCharOption && !numbersOption) {
+    if (!lttrLwrOption && lttrUpprOption && !spclCharOption && !numbersOption) {
       for (var i = 0; i < passLength; i++) {
         outputPass += lttrUppr[Math.floor(Math.random() * lttrUppr.length)];
       }
@@ -157,7 +157,7 @@ function generatePassword() {
     }
 
     // Output for when special characters and numbers were chosen
-    else if ( !lttrLwrOption && !lttrUpprOption && spclCharOption && numbersOption) {
+    if ( !lttrLwrOption && !lttrUpprOption && spclCharOption && numbersOption) {
       for (var i = 0; i < passLength; i++) {
         outputPass += options9[Math.floor(Math.random() * options9.length)];
       }
@@ -165,7 +165,7 @@ function generatePassword() {
     }
 
     // Output for when only special characters was chosen
-    else if ( !lttrLwrOption && !lttrUpprOption && spclCharOption && !numbersOption) {
+    if ( !lttrLwrOption && !lttrUpprOption && spclCharOption && !numbersOption) {
       for (var i = 0; i < passLength; i++) {
         outputPass += spclChar[Math.floor(Math.random() * spclChar.length)];
       }
@@ -173,7 +173,7 @@ function generatePassword() {
     }
 
     // Output for when only numbers was chosen
-    else if ( !lttrLwrOption && !lttrUpprOption && !spclCharOption && numbersOption) {
+    if ( !lttrLwrOption && !lttrUpprOption && !spclCharOption && numbersOption) {
       for (var i = 0; i < passLength; i++) {
         outputPass += numbers[Math.floor(Math.random() * numbers.length)];
       }
@@ -250,7 +250,7 @@ function generatePassword() {
 
     // If all results come back true, return true
     if (lttrLwrResult == true && lttrUpprResult == true && spclCharResult == true && numbersResult == true) {
-      return
+      return true
     }
 
     // If any of the options fail, return false
