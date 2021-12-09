@@ -324,6 +324,10 @@ function generatePassword() {
       return outputPass;
     }
   }
+
+  var passPreArray = generation()
+  var passArray = passPreArray.split("")
+  return console.log(passArray)
 }
 // -------------
 // END TEST CODE
