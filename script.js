@@ -192,18 +192,20 @@ function generatePassword() {
 
     // If the option for lowercase was not selected, outputs true for characterCheckResult to pass
     if (lttrLwrOption == false) {
+      var lttrLwrResult = true
+    }
+
+    if (lttrLwrResult == true) {
       return true
     }
-
-    // Validation result for lowercase option to password result
-    if (lttrLwrResult == true) {
-      return lttrLwrResult
-    }
   }
+
+  // Variable of the password to options verification
   var characterCheckResult = characterCheck()
 
+  // If all options verification passed, output final generated password
   if (characterCheckResult == true) {
-    return console.log("Working code log")
+    return outputPass
   }
 }
 
