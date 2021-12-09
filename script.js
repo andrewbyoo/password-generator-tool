@@ -255,7 +255,7 @@ function generatePassword() {
 
     // If any of the options fail, return false
     else {
-      return false
+      return
     }
   }
 
