@@ -250,12 +250,12 @@ function generatePassword() {
 
     // If all results come back true, return true
     if (lttrLwrResult == true && lttrUpprResult == true && spclCharResult == true && numbersResult == true) {
-      return true
+      return
     }
 
     // If any of the options fail, return false
     else {
-      return
+      return false
     }
   }
 
