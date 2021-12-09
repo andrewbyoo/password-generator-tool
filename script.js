@@ -19,6 +19,16 @@ var options7 = lttrUppr.concat(spclChar)
 var options8 = lttrUppr.concat(numbers)
 var options9 = spclChar.concat(numbers)
 
+// When button on the web page is clicked, the writePassword function runs
+generateBtn.addEventListener("click", writePassword);
+
+// Function to call the generatePassword function and output the result onto the HTML id password
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+  passwordText.value = password;
+}
+
 // Function to start prompting user on password length and character options
 function generatePassword() {
 
@@ -180,11 +190,6 @@ function generatePassword() {
   // Function to check if characters in the generated password includes all selected options
   function characterCheck() {
 
-    // Returns true or false depending on if a lowercase letter was included in the password
-    function lttrLwrCheck(passArray, lttrLwr) {
-      return passArray.some(item => lttrLwr.includes(item))
-    }
-
     // If the option for lowercase was selected, runs the lttrLwrCheck function
     if (lttrLwrOption == true) {
       var lttrLwrResult = lttrLwrCheck(passArray, lttrLwr)
@@ -195,9 +200,9 @@ function generatePassword() {
       var lttrLwrResult = true
     }
 
-    // Returns true or false depending on if an uppercase letter was included in the password
-    function lttrUpprCheck(passArray, lttrUppr) {
-      return passArray.some(item => lttrUppr.includes(item))
+    // Returns true or false depending on if a lowercase letter was included in the password
+    function lttrLwrCheck(passArray, lttrLwr) {
+      return passArray.some(item => lttrLwr.includes(item))
     }
 
     // If the option for uppercase was selected, runs the lttrUpprCheck function
@@ -210,9 +215,9 @@ function generatePassword() {
       var lttrUpprResult = true
     }
 
-    // Returns true or false depending on if a special character was included in the password
-    function spclCharCheck(passArray, spclChar) {
-      return passArray.some(item => spclChar.includes(item))
+    // Returns true or false depending on if an uppercase letter was included in the password
+    function lttrUpprCheck(passArray, lttrUppr) {
+      return passArray.some(item => lttrUppr.includes(item))
     }
 
     // If the option for special characters was selected, runs the spclCharCheck function
@@ -225,9 +230,9 @@ function generatePassword() {
       var spclCharResult = true
     }
 
-    // Returns true or false depending on if numbers were included in the password
-    function numbersCheck(passArray, numbers) {
-      return passArray.some(item => numbers.includes(item))
+    // Returns true or false depending on if a special character was included in the password
+    function spclCharCheck(passArray, spclChar) {
+      return passArray.some(item => spclChar.includes(item))
     }
 
     // If the option for numbers was selected, runs the numbersCheck function
@@ -240,14 +245,19 @@ function generatePassword() {
       var numbersResult = true
     }
 
-    // If all results come back true, return true for final output
+    // Returns true or false depending on if numbers were included in the password
+    function numbersCheck(passArray, numbers) {
+      return passArray.some(item => numbers.includes(item))
+    }
+
+    // If all results come back true, return true
     if (lttrLwrResult == true && lttrUpprResult == true && spclCharResult == true && numbersResult == true) {
       return true
     }
 
-    // If any of the options fail, re-run generation function
+    // If any of the options fail, return false
     else {
-      return generation()
+      return false
     }
   }
 
@@ -258,14 +268,9 @@ function generatePassword() {
   if (characterCheckResult == true) {
     return outputPass
   }
-}
 
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-  passwordText.value = password;
+  // If any of the options returned false, re-run generation function
+  else {
+    return generation()
+  }
 }
-
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
