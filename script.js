@@ -177,22 +177,22 @@ function generatePassword() {
   var passPreArray = generation()
   var passArray = passPreArray.split("")
 
-  // Returns true or false depending on if a lower letter was included in the password
-  function lttrLwrCheck(passArray, lttrLwr) {
-    return passArray.some(item => lttrLwr.includes(item))
-  }
+  // // Returns true or false depending on if a lower letter was included in the password
+  // function lttrLwrCheck(passArray, lttrLwr) {
+  //   return passArray.some(item => lttrLwr.includes(item))
+  // }
 
-  // If the option for lowercase was selected, runs the lttrLwrCheck function
-  if (lttrLwrOption == true) {
-    var lttrLwrResult = lttrLwrCheck(passArray, lttrLwr)
-    return lttrLwrResult
-  }
+  // // If the option for lowercase was selected, runs the lttrLwrCheck function
+  // if (lttrLwrOption == true) {
+  //   var lttrLwrResult = lttrLwrCheck(passArray, lttrLwr)
+  //   return outputPass
+  // }
 
-  // If the option for lowercase was selected but no lowercase letters were included in the generated password, re-runs the generation function
-  if (lttrLwrResult == false) {
-    return generation()
-  }
-  return outputPass
+  // // If the option for lowercase was selected but no lowercase letters were included in the generated password, re-runs the generation function
+  // if (lttrLwrResult == true) {
+  //   return console.log("Now it works")
+  // }
+  return
 }
 
 // Write password to the #password input
