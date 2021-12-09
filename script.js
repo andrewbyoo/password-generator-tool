@@ -5,7 +5,6 @@ var lttrUppr = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M",
 var spclChar = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "-", "+", "=", "[", "{", "]", "}", "|", "\\",";", ":", "'", '"', "<", ",", ">", ".", "`", "~", "/", "?"]
 var numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
 var outputPass = ""
-var outputPassArray = ""
 
 // Option outputs not including the arrays on their own
 var allOptions = lttrLwr.concat(lttrUppr, spclChar, numbers)
@@ -60,7 +59,6 @@ function generatePassword() {
 
     // Pass reset for when the function gets re-run without refreshing the page
     outputPass = ""
-    outputPassArray = ""
 
     // Output for when all options were chosen
     if (lttrLwrOption && lttrUpprOption && spclCharOption && numbersOption) {
