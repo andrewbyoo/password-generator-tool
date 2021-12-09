@@ -327,7 +327,13 @@ function generatePassword() {
 
   var passPreArray = generation()
   var passArray = passPreArray.split("")
-  return console.log(passArray)
+
+  function lttrLwrCheck(passArray, lttrLwr) {
+    return passArray.some(item => lttrLwr.includes(item))
+  }
+
+  var lttrLwrResult = lttrLwrCheck(passArray, lttrLwr)
+  return console.log(lttrLwrResult)
 }
 // -------------
 // END TEST CODE
