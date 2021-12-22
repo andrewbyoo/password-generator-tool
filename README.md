@@ -20,3 +20,6 @@ The following are the features that were implemented:
 
 ## Link
 https://andrewyoo93.github.io/password-generator-tool/
+
+## License
+[![license](https://img.shields.io/badge/license-MIT-blue)](./LICENSE)
