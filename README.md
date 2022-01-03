@@ -19,7 +19,7 @@ The following are the features that were implemented:
 * Outputs a randomized password based on the user selected criteria.
 
 ## Link
-https://andrewyoo93.github.io/password-generator-tool/
+https://andrewbyoo.github.io/password-generator-tool/
 
 ## License
 [![license](https://img.shields.io/badge/license-MIT-blue)](./LICENSE)
